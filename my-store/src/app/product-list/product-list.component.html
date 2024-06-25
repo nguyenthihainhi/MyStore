@@ -1,0 +1,98 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-3 col-md-12 col-sm-12">
+      <div class="menu mt-2">
+        <div class="menu-categories d-flex justify-content-around">
+          <a class="menu-category">Tất cả</a>
+          <div class="divider"></div>
+          <a class="menu-category">Nam</a>
+          <div class="divider"></div>
+          <a class="menu-category">Nữ</a>
+        </div>
+        <div class="line-list"></div>
+        <ul class="type-list">
+          <li>
+            <a href="">Accessories | Phụ kiện</a>
+          </li>
+          <li>
+            <a href="">Footwear | Lên chân</a>
+          </li>
+          <li>
+            <a href="">Top | Nửa trên</a>
+          </li>
+        </ul>
+        <div class="line-list"></div>
+        <div class="menu-section" *ngFor="let section of sections">
+          <h4
+            (click)="toggleSection(section)"
+            [ngClass]="{
+              'section-title': true,
+              open: section.isOpen,
+              closed: !section.isOpen
+            }"
+          >
+            {{ section.title }}
+          </h4>
+          <div *ngIf="section.isOpen" class="section-content">
+            <div *ngIf="section.title === 'MÀU SẮC'">
+              <ul class="nav tree">
+                <li class="cb-color" *ngFor="let color of section.items">
+                  <label class="cb-color-checked">
+                    <span
+                      class="bg-color"
+                      [style.background-color]="color"
+                    ></span>
+                    <input
+                      name="cbColor"
+                      type="checkbox"
+                      [value]="color"
+                      hidden
+                    />
+                  </label>
+                </li>
+              </ul>
+            </div>
+            <div *ngIf="section.title !== 'MÀU SẮC'">
+              <ul class="type-list">
+                <li *ngFor="let item of section.items">
+                  <a href="">{{ item }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-12 col-sm-12">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 prd1-right">
+          <img
+            class="main-img"
+            src="https://ananas.vn/wp-content/uploads/Desktop_Homepage_Banner.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="row ms-0">
+        <div
+          class="col-lg-4 col-md-6 col-sm-12 prd1-right p-3"
+          *ngFor="let p of products"
+        >
+          <div class="popular-items popular mb-3">
+            <div class="card border-0" [routerLink]="['/product', 1]">
+              <img class="image-product" src="{{ p.imageUrl }}" alt="p" />
+              <p class="fw-bolder popular-name text-center pt-3">
+                {{ p.name }}
+              </p>
+              <p class="text-center">{{ p.description }}</p>
+              <p class="fs-6 fw-bolder text-center">
+                {{ p.price }} {{ p.currency }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

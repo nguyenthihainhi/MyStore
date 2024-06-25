@@ -1,0 +1,109 @@
+.menu {
+  font-family: Arial;
+}
+
+.menu-categories {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.menu-category:hover {
+  color: #4c4c4c;
+}
+.divider {
+  border-right: #e3e2e2 2px solid;
+  margin-top: 38px;
+  height: 23px;
+}
+.menu-category {
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(140, 135, 135);
+  text-transform: uppercase;
+  font-size: large;
+  font-weight: bolder;
+  margin-top: 35px;
+}
+.line-list {
+  border-bottom: 1px solid black;
+}
+
+.type-list {
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.type-list a {
+  text-decoration: none;
+  font-weight: lighter;
+  color: #333;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.type-list a:hover {
+  background-color: #f1f1f1;
+}
+
+.line {
+  border-bottom: 2px dashed rgb(178, 174, 174);
+}
+
+.menu-section {
+  padding: 10px 0;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #0f0f0f;
+}
+.section-title.closed {
+  color: black;
+}
+
+.section-title.open {
+  color: #ff6600;
+}
+
+.section-content {
+  padding: 5px 0;
+}
+
+.tree .cb-color label {
+  padding: 3px 0px 0px 3px;
+  width: 50px;
+  height: 50px;
+  border: #fff 2px solid;
+  margin-bottom: 3px;
+}
+
+.bg-color {
+  display: inline-block;
+  width: 30px; /* Width of the color preview box */
+  height: 30px; /* Height of the color preview box */
+  border: 1px solid #ccc; /* Border around the color preview box */
+  margin-right: 20px; /* Space between color preview box and text */
+  vertical-align: middle; /* Align vertically with the checkbox */
+}
+.current a {
+  background-color: #f1f1f1;
+  color: #000;
+  font-weight: bold;
+  pointer-events: none;
+}
+.prd1-right {
+  padding-left: 20px;
+}
+.main-img {
+  width: 65vw;
+}
+.popular-name:hover {
+  color: #ff6600;
+  cursor: pointer;
+}

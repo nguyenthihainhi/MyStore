@@ -1,0 +1,94 @@
+.nav-link span:hover,
+.nav-link:hover {
+  color: red;
+  text-shadow: white 1px 0 10px;
+}
+.dropdown-item {
+  color: rgb(178, 174, 174);
+  cursor: pointer;
+}
+.dropdown-item:hover,
+.dropdown-header:hover {
+  color: red;
+  background-color: #4c4c4c;
+}
+.dropdown-header {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bolder;
+  color: aliceblue;
+  cursor: pointer;
+}
+.font-size-link {
+  font-size: 0.8vw;
+}
+.search-form input {
+  border: 0;
+  font-size: 14px;
+  color: #012970;
+  border: 2px solid gray;
+  padding: 7px 38px 7px 8px;
+  border-radius: 10px;
+}
+.search-form button {
+  border: 0;
+  padding: 0;
+  margin-left: -30px;
+  background: none;
+  color: grey;
+}
+.right-menu-list {
+  width: 250px;
+}
+
+.navbar-nav .dropdown-menu {
+  display: none;
+}
+
+.navbar-nav .nav-item.dropdown:hover > .dropdown-menu {
+  text-align: center;
+  display: block;
+  margin-top: 0;
+}
+.divider {
+  border-right: #e3e2e2 2px solid;
+  margin-top: 12px;
+  height: 23px;
+  margin-right: 10px;
+}
+
+.dropdown-menu {
+  transition: display 0.5s ease-in-out;
+  background-color: #4c4c4c;
+}
+
+.navbar .megamenu {
+  padding: 1rem;
+}
+.border-dashed-right {
+  border-right: 2px dashed rgb(178, 174, 174);
+}
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .navbar .has-megamenu {
+    position: static !important;
+  }
+  .navbar .megamenu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ mobile view ============ */
+@media (max-width: 991px) {
+  .navbar.fixed-top .navbar-collapse,
+  .navbar.sticky-top .navbar-collapse {
+    overflow-y: auto;
+    max-height: 90vh;
+    margin-top: 10px;
+  }
+}
