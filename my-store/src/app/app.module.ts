@@ -15,11 +15,13 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AppComponent } from './app.component';
 import { NavHeaderComponent } from './nav-header/nav-header.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent, 
     NavHeaderComponent,
     ProductListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule, 

@@ -1,0 +1,50 @@
+.bg-full {
+  background-image: url(https://ananas.vn/wp-content/themes/ananas/fe-assets/images/bg_comingsoon.jpg);
+  height: 100vh;
+  position: relative;
+  width: 100vw;
+}
+.login-wrapper {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.name-wrapper {
+  font-size: 80px;
+  padding-bottom: 90px;
+  font-weight: bold;
+}
+.send-mail input {
+  border: 0;
+  font-size: 14px;
+  color: #012970;
+  border: 2px solid gray;
+  padding: 12px 20px 12px 8px;
+  border-radius: 0;
+}
+.send-mail button {
+  border: none;
+  padding: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-left: 0px;
+  background: none;
+  color: white;
+  background-color: #ff6600;
+}
+.center-form {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.go-to-home {
+  border: none;
+  color: white;
+  background-color: #ff6600;
+  margin-top: 50px;
+  padding: 24px 50px;
+  font-size: x-large;
+  font-weight: bolder;
+}
