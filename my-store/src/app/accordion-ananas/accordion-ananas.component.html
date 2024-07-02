@@ -1,0 +1,33 @@
+<div class="accordion-ananas" id="accordionPanelsDescriptionProduct">
+    <div class="accordion-item" *ngFor="let item of accordionList; index as idx">
+        <h4 class="accordion-header" id="panelsStayOpen-infoProduct">
+            <button class="" type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#panelsStayOpen-collapseOne' + idx"
+                aria-expanded="true"  [attr.aria-controls]="'panelsStayOpen-collapseOne' + idx">
+                {{item.header}}
+            </button>
+        </h4>
+        <div id="panelsStayOpen-collapseOne{{idx}}" class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-infoProduct">
+            <div class="accordion-body">
+                <h6>
+                    <p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;- Gender: Unisex\n- Size run: 35 - 46\n- Upper: Canvas NE\n- Outsole: Rubber\n- Có thêm 01 bộ dây đi kèm&quot;}"
+                            data-sheets-userformat="{&quot;2&quot;:12673,&quot;3&quot;:{&quot;1&quot;:0},&quot;10&quot;:1,&quot;11&quot;:4,&quot;15&quot;:&quot;Arial&quot;,&quot;16&quot;:14}">Gender:
+                            Unisex<br>
+                            Size run: 35 – 46<br>
+                            Upper: Canvas NE<br>
+                            Outsole: Rubber<br>
+                            Có thêm 01 bộ dây đi kèm</span></p>
+                    <p><a href="https://ananas.vn/wp-content/uploads/Ananas_SizeChart.jpg"><img
+                                class="alignnone wp-image-886913"
+                                src="https://ananas.vn/wp-content/uploads/Ananas_SizeChart.jpg" alt="" width="398"
+                                height="563"
+                                srcset="https://ananas.vn/wp-content/uploads/Ananas_SizeChart.jpg 481w, https://ananas.vn/wp-content/uploads/Ananas_SizeChart-212x300.jpg 212w, https://ananas.vn/wp-content/uploads/Ananas_SizeChart-184x260.jpg 184w, https://ananas.vn/wp-content/uploads/Ananas_SizeChart-353x500.jpg 353w"
+                                sizes="(max-width: 398px) 100vw, 398px"></a></p>
+                </h6>
+            </div>
+        </div>
+    </div>
+    <!-- --------------- -->
+
+    <!-- --------------- -->
+</div>

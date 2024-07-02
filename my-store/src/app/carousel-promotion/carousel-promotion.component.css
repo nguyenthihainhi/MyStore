@@ -1,0 +1,38 @@
+a {
+    color: currentColor;
+    text-decoration: none;
+}
+
+
+#carouselExampleInterval{
+    background-color: #f1f1f1;
+}
+.container-carousel{
+    position: relative;
+    width: 60%;
+    padding: 20px; /* Adjust padding as needed */
+}
+
+.container-carousel, .carousel-inner{
+    margin: 0 auto;
+}
+
+.carousel-inner{
+    width: calc(100% - 2 * 20px);
+}
+
+.carousel-item-con{
+    text-transform: uppercase;
+    font-weight: 600;
+    color: gray;
+    font-style: italic;
+}
+.carousel-control-prev, .carousel-control-next{
+    color: gray;
+
+}
+
+.carousel-control-prev:hover {
+        color: #000;
+        font-weight: 900;
+}

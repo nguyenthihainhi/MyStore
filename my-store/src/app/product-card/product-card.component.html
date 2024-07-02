@@ -1,0 +1,14 @@
+<div class="popular-items popular">
+    <div class="card border-0" 
+    [routerLink]=""
+    >
+      <img class="image-product" src="{{ product.imageUrl }}" alt="p" />
+      <p class="fw-bolder popular-name text-center pt-3">
+        {{ product.name }}
+      </p>
+      <p class="text-center">{{ product.description }}</p>
+      <p class="fs-6 fw-bolder text-center">
+        {{ product.price }} {{ product.currency }}
+      </p>
+    </div>
+  </div>

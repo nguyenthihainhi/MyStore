@@ -50,6 +50,7 @@
   text-align: center;
   display: block;
   margin-top: 0;
+  transition: all 0.3s linear;
 }
 .divider {
   border-right: #e3e2e2 2px solid;

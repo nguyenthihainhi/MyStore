@@ -1,0 +1,21 @@
+<div class="btn-select-group">
+    <button type="button" class="dropdown-toggle" data-toggle="dropdown" data-id="pickSize" title="size"  (click)="toggleSelect($event)" #toggleButton
+        aria-expanded="true">
+        <span class="filter-option float-start"> {{selectedData}} </span>
+    </button>
+    <div class="dropdown-menu-select" [ngStyle]="{display: isOpen ? 'block': 'none'}" #dropMenuSelect>
+        <ul class="dropdown-menu-select-inner">
+            <li data-original-index="0" class="disabled">
+                <a tabindex="0"> 
+                    <span class="text">&nbsp;</span>
+                </a>
+            </li>
+            <li data-original-index="0"
+            *ngFor="let item of dataSelect">
+                <a tabindex="0">
+                    <span class="text"  (click)="selectItem($event)">{{item}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

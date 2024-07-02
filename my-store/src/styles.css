@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+/* standard css */
+:root{
+    --color-primary: #f15e2c;
+}
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+a, ul li, button {
+    text-decoration: none;
+    color: currentColor;
+    list-style-type: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+
+/* override ngx-bootstrap*/
+
+/* carousel image multillist */
+.carousel-indicators{
+    display: none !important;
+}
+
+.carousel-inner{
+    gap: 0.2rem;
+}
