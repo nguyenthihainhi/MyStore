@@ -12,5 +12,5 @@ export const routes: Routes = [
     {path: 'manage/product', component: ManageProductComponent},
     {path: 'dashboard', component: DashboardComponent},
     {path: 'tab', component: ContentTabComponent},
-    { path: '', redirectTo: '/manage/product', pathMatch: 'full'},
+    { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 ];
