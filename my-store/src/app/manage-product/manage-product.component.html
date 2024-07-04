@@ -1,0 +1,253 @@
+<div class="container mt-5">
+  <div
+    bsModal
+    #lgModal="bs-modal"
+    class="modal fade"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="dialog-sizes-name1"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 id="dialog-sizes-name1" class="modal-title pull-left">
+            Enter Product Information
+          </h1>
+          <button
+            type="button"
+            class="btn-close close pull-right"
+            (click)="lgModal.hide()"
+            aria-label="Close"
+          >
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="mb-3 row">
+                <label for="code" class="col-sm-3 col-form-label"
+                  >Product Code</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="code"
+                    placeholder="product code"
+                    [(ngModel)]="product.product_code"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="name" class="col-sm-3 col-form-label"
+                  >Product Name</label
+                >
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="product name"
+                    [(ngModel)]="product.name"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="description" class="col-sm-3 col-form-label"
+                  >Description</label
+                >
+                <div class="col-sm-9">
+                  <textarea
+                    id="description"
+                    name="description"
+                    class="form-control"
+                    rows="4"
+                    cols="40"
+                    placeholder="product description"
+                    [(ngModel)]="product.description"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="price" class="col-sm-3 col-form-label">Price</label>
+                <div class="col-sm-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    placeholder="Price"
+                    [(ngModel)]="product.price"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="category" class="col-sm-3 col-form-label"
+                  >Category</label
+                >
+                <div class="col-sm-9">
+                  <select
+                    class="form-control"
+                    id="category"
+                    [(ngModel)]="selectedCategory"
+                  >
+                    <option value="" disabled selected>
+                      select category...
+                    </option>
+                    <option
+                      *ngFor="let cate of categories"
+                      [value]="cate.categoryID"
+                    >
+                      {{ cate.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Display the list of added product details -->
+              <div class="mb-3 row" *ngIf="showDetails">
+                <label for="details" class="col-sm-3 col-form-label"
+                  >Enter Product Details Information</label
+                >
+                <div class="col-sm-9">
+                  <div
+                    *ngFor="let detail of product.productDetail; let i = index"
+                  >
+                    <div class="details mb-3 p-3">
+                      <div class="mb-3 row">
+                        <label for="name" class="col-sm-3 col-form-label"
+                          >Special Name</label
+                        >
+                        <div class="col-sm-9 mb-4">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="Special Name"
+                            [(ngModel)]="detail.specialname"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                      <!-- Color Picker for each detail -->
+                      <div class="mb-3 row">
+                        <label for="color" class="col-sm-3 col-form-label"
+                          >Color</label
+                        >
+                        <div class="col-sm-9">
+                          <div class="color-picker">
+                            <div
+                              *ngFor="let color of colors"
+                              class="color-option"
+                              [ngStyle]="{ 'background-color': color.code }"
+                              [class.selected]="color.name === detail.color"
+                              (click)="selectColor(color, detail)"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Quantity input for each detail -->
+                      <div class="mb-3 row">
+                        <label for="quantity" class="col-sm-3 col-form-label"
+                          >Quantity</label
+                        >
+                        <div class="col-sm-9 mb-4">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="quantity"
+                            placeholder="quantity"
+                            [(ngModel)]="detail.quantity"
+                            min="1"
+                          />
+                        </div>
+                      </div>
+                      <!-- Optional: Button to remove a specific detail -->
+                      <button
+                        class="btn btn-danger btn-sm ms-2"
+                        (click)="removeDetail(i)"
+                      >
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Button to add a new ProductDetail -->
+              <div class="mb-3 row">
+                <div class="col-sm-3 col-form-label"></div>
+                <div class="col-sm-9 d-flex justify-content-end">
+                  <button
+                    class="btn btn-outline-success me-3"
+                    (click)="addProductDetail()"
+                  >
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="mb-3 row">
+                <div class="col-sm-3 col-form-label"></div>
+                <div class="col-sm-9">
+                  <button
+                    class="btn btn-outline-primary me-3"
+                    (click)="addProduct()"
+                  >
+                    Add
+                  </button>
+                  <button
+                    class="btn btn-outline-primary me-3"
+                    (click)="updateProduct()"
+                  >
+                    Update
+                  </button>
+                  <button class="btn btn-danger" (click)="clearForm()">
+                    Clear
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <h2>Product</h2>
+    <button class="btn btn-primary" (click)="lgModal.show()">
+      Add New Product
+    </button>
+  </div>
+  <table class="table table-hover mt-3">
+    <thead class="table-primary">
+      <tr>
+        <th class="p-4">Product Name</th>
+        <th class="p-4">Special Name</th>
+        <th class="p-4">Price</th>
+        <th class="p-4">Color</th>
+        <th class="p-4">Size</th>
+        <th class="p-4">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products">
+        <td class="p-3">{{ item.productName }}</td>
+        <td class="p-3">{{ item.specialName }}</td>
+        <td class="p-3">{{ item.price }}</td>
+        <td class="p-3">{{ item.size }}</td>
+        <td class="p-3">{{ item.color }}</td>
+        <td class="p-3">{{ item.quantity }}</td>
+        <td class="p-3">
+          <a class="me-3" (click)="getProduct(item.productID)"
+            ><i class="far fa-edit"></i
+          ></a>
+          <a class="text-danger" (click)="deleteProduct(item.productID)"
+            ><i class="fas fa-trash-alt"></i
+          ></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

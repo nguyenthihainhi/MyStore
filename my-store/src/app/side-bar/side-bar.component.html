@@ -1,0 +1,67 @@
+<div class="px-sm-2 px-0 bg-primary side-bar">
+  <div
+    class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white width-bar"
+  >
+    <a
+      class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+    >
+      <span class="fs-5 d-none d-sm-inline">Ananas</span>
+    </a>
+    <ul
+      class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+      id="menu"
+    >
+      <li>
+        <a
+          href="#submenu1"
+          data-bs-toggle="collapse"
+          class="nav-link px-0 align-middle text-light"
+        >
+          <i class="fs-5 fas fa-home"></i>
+          <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['../manage/product']"
+          class="nav-link px-0 align-middle text-light"
+        >
+          <i class="fs-5 fas fa-truck-loading"></i>
+          <span class="ms-1 d-none d-sm-inline">Products</span></a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          data-bs-toggle="collapse"
+          class="nav-link px-0 align-middle text-light"
+        >
+          <i class="fs-5 fas fa-project-diagram"></i>
+          <span class="ms-1 d-none d-sm-inline"> Categories</span></a
+        >
+      </li>
+      <li class="d-flex justify-content-around">
+        <a
+          href="#"
+          data-bs-toggle="collapse"
+          class="nav-link px-0 align-middle text-light"
+        >
+          <i class="fs-4 fab fa-wpforms"></i>
+          <span class="ms-2 d-none d-sm-inline">Orders</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link px-0 align-middle text-light">
+          <i class="fs-5 fas fa-users"></i>
+          <span class="ms-1 d-none d-sm-inline">Customers</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link px-0 align-middle text-light">
+          <i class="fs-5 fas fa-percent"></i>
+          <span class="ms-1 d-none d-sm-inline"> Sales Promotion </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

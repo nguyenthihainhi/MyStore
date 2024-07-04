@@ -1,0 +1,15 @@
+.avatar {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content {
+  font-weight: normal;
+}
+.small {
+  font-size: 13px;
+}

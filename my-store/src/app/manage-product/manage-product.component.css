@@ -1,0 +1,22 @@
+.color-picker {
+  display: flex;
+  flex-wrap: wrap;
+  width: 220px;
+  margin: 0 20px;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.color-option.selected {
+  border: 2px solid black;
+}
+.details {
+  border: 2px dashed #f15e2c;
+  width: 500px;
+}
