@@ -102,6 +102,7 @@
 }
 .main-img {
   width: 65vw;
+  height: 35vh;
 }
 .popular-name:hover {
   color: #ff6600;

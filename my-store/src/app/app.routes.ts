@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { ProductListComponent } from './product-list/product-list.component';
-import { LoginComponent } from './login/login.component';
-import { ManageProductComponent } from './manage-product/manage-product.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ContentTabComponent } from './content-tab/content-tab.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { ManageProductComponent } from './management/manage-product/manage-product.component';
+import { SideBarComponent } from './nav/side-bar/side-bar.component';
+import { DashboardComponent } from './management/dashboard/dashboard.component';
+import { ContentTabComponent } from './management/content-tab/content-tab.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 export const routes: Routes = [
     {path: 'product', component: ProductListComponent},

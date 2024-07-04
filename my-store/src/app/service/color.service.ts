@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Color } from '../models/color';
+import { UrlApi } from '../url/UrlApi';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class ColorService {
     { name: 'Red', code: '#d22d2d' },
     { name: 'Dark Grey', code: '#454545' },
   ];
-  url = 'https://localhost:5001/api/Colors';
+  url = UrlApi.ApiColor;
   constructor(private http: HttpClient) { }
   getColors(){
     return this.colors;

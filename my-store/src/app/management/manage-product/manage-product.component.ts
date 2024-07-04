@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap} from '@angular/router';
-import { Product } from '../models/product';
-import { ProductDetail } from '../models/product-detail';
-import { ProductService } from '../service/product.service';
-import { Color } from '../models/color';
-import { ColorService } from '../service/color.service';
-import { CategoryService } from '../service/category.service';
-import { Category } from '../models/category';
-import { ProductList } from '../models/productList';
+import { Product } from '../../models/product';
+import { ProductDetail } from '../../models/product-detail';
+import { ProductService } from '../../service/product.service';
+import { Color } from '../../models/color';
+import { ColorService } from '../../service/color.service';
+import { CategoryService } from '../../service/category.service';
+import { Category } from '../../models/category';
+import { ProductList } from '../../models/productList';
 
 @Component({
   selector: 'app-manage-product',

@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductList } from '../models/productList';
+import { UrlApi } from '../url/UrlApi';
 
 
 @Injectable({
@@ -148,7 +149,7 @@ export class ProductService {
   //     isFavorite: false
   //   }
   // ];
-  url = 'https://localhost:5001/api/Products';
+  url = UrlApi.ApiProduct;
   constructor(private http: HttpClient) { }
   getProducts(){
     // return this.products;
