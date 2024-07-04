@@ -21,6 +21,14 @@ import { ManageProductComponent } from './manage-product/manage-product.componen
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContentTabComponent } from './content-tab/content-tab.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CarouselPromotionComponent } from './carousel-promotion/carousel-promotion.component';
+import { SelectTableComponent } from './select-table/select-table.component';
+import { AccordionAnanasComponent } from './accordion-ananas/accordion-ananas.component';
+import { TemplateModalComponent } from './template-modal/template-modal.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { CarouselTemplateCartComponent } from './carousel-template-cart/carousel-template-cart.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -31,6 +39,13 @@ import { ContentTabComponent } from './content-tab/content-tab.component';
     SideBarComponent,
     DashboardComponent,
     ContentTabComponent,
+    ProductDetailComponent,
+    CarouselPromotionComponent,
+    SelectTableComponent,
+    AccordionAnanasComponent,
+    TemplateModalComponent,
+    ProductCardComponent,
+    CarouselTemplateCartComponent
   ],
   imports: [
     BrowserModule, 
@@ -45,6 +60,7 @@ import { ContentTabComponent } from './content-tab/content-tab.component';
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     AccordionModule.forRoot(),
+    SlickCarouselModule
   ],
   providers: [
   ],

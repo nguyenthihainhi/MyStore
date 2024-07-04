@@ -1,0 +1,126 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-7">
+            <div class="wrapoer-slide">
+                <div class="prd-detail-main-img">
+                    <img class="main-img" src={{imageZoom}} alt="">
+                    <img id="zoom" class="zoom-img hidden-xs hidden-sm"
+                        src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/icon_zoom.svg"
+                        (click)="tongleModalImg()" alt="">
+                </div>
+                <!-- carousel image -->
+                <div class="prd-detail-slide1">
+                    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="singleSlideOffset" [interval]="0"
+                        [noWrap]="noWrap">
+                        <slide *ngFor="let slide of thumbnailProductDetail; let index=index" style="cursor: pointer;">
+                            <img [src]="slide.url" alt="image slide" style="display: block; width: 100%;"
+                                (click)="handleChooseImage(slide.name)">
+                        </slide>
+                    </carousel>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col col-12 col-sm-12 col-md-12 col-lg-5 prd-detail-right">
+            <h4>{{itemProductDetail.title}}</h4>
+            <h6 class="detail1">
+                <span>Mã sản phẩm: <strong>{{itemProductDetail.sku}}</strong></span>
+            </h6>
+            <h5 class="detail1">
+                <span class="saleprice">{{itemProductDetail.price}} VND</span>
+            </h5>
+            <div class="divider"></div>
+            <div class="group-color">
+                <ul class="nav-tree">
+                    <li class="cb-color" *ngFor="let item of itemProductDetail.theme">
+                        <label class="cb-color-checked" for="cbColor" routerLink="{{item.slug}}">
+                            <span class="bg-color" [style.background-color]="item.hexColor"></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="divider"></div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6">
+                    <label for="size" class="label-size">Size</label>
+                    <select name="size" id="size" class="form-select select-hidden">
+                        <option selected>&nbsp;</option>
+                        <option value="{{indx}}" *ngFor="let size of itemProductDetail.size; index as indx">{{size}}
+                        </option>
+                    </select>
+                    <ng-container [ngTemplateOutlet]="selectTable"
+                        [ngTemplateOutletContext]="{data: itemProductDetail.size}">
+                    </ng-container>
+
+                </div>
+                <div class="col-12 col-sm-6 col-md-6">
+                    <label for="quantity" class="label-quantity">Số Lượng</label>
+                    <select name="quantity" id="quantity" class="form-select select-hidden">
+                        <option selected>&nbsp;</option>
+                        <option value="{{indx}}" *ngFor="let quantity of itemProductDetail.quantity; index as indx">
+                            {{quantity}}
+                        </option>
+                    </select>
+                    <ng-container [ngTemplateOutlet]="selectTable"
+                        [ngTemplateOutletContext]="{data: itemProductDetail.quantity}">
+                    </ng-container>
+                </div>
+            </div>
+
+            <div class="row p-3">
+                <a routerLink="/" class="btn-addCart">Thêm vào giỏ hàng</a>
+                <a routerLink="/" class="btn-liked">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path fill="#f15e2c"
+                            d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8v-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5v3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20c0 0-.1-.1-.1-.1c0 0 0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5v3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2v-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="row px-3">
+                <a routerLink="/" class="btn-checkout">Thanh toán</a>
+            </div>
+
+            <div class="panel-group">
+                <app-accordion-ananas></app-accordion-ananas>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h3 class="text-center text-uppercase fs-2 fw-bolder py-5">Sản phẩm liên quan</h3>
+            <app-carousel-template-cart></app-carousel-template-cart>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+            <h3 class="text-center text-uppercase fs-2 fw-bolder py-5">Sản phẩm đã xem</h3>
+             <app-carousel-template-cart></app-carousel-template-cart>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="divider"></div>
+
+
+
+
+<!-- jBox-Modal  -->
+<app-template-modal>
+    <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="singleSlideOffset" [interval]="0" [noWrap]="noWrap">
+        <slide *ngFor="let slide of thumbnailProductDetail; let index=index" style="cursor: pointer;">
+            <img [src]="slide.url" alt="image slide" style="display: block; width: 100%; border-radius: 8px;">
+        </slide>
+    </carousel>
+</app-template-modal>
+
+
+<!-- select table -->
+<ng-template #selectTable let-data="data">
+    <app-select-table [dataSelect]="data"></app-select-table>
+</ng-template>

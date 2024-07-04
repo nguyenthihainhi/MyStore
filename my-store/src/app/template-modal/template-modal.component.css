@@ -1,0 +1,40 @@
+.modal-container {
+    min-width: 90vw;
+}
+
+.modal-container {
+    position: fixed;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+
+.carousel-vertical {
+    position: fixed;
+    bottom: 0;
+}
+
+.image-content {}
+
+.image_main {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+.image_main img {
+    max-height: 900px;
+}
+
+.image-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.image-close button {
+    font-size: 1.5rem;
+}
