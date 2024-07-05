@@ -1,6 +1,8 @@
 .side-bar {
   border-radius: 16px;
+  height: 100vh;
 }
 .width-bar {
   min-height: 600px;
 }
+

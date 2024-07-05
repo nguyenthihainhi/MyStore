@@ -15,6 +15,11 @@ import { ProductList } from '../../models/productList';
   styleUrl: './manage-product.component.css'
 })
 export class ManageProductComponent implements OnInit{
+  isSidebarOpen: boolean = false; // Ban đầu sidebar đóng
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
   products: ProductList[] = [];
   product: Product = new Product();
   ProductId: number | null = null; 
@@ -104,4 +109,6 @@ export class ManageProductComponent implements OnInit{
       this.showDetails = false;
     }
   }
+
+
 }

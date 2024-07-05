@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavHeaderComponent } from './nav/nav-header/nav-header.component';
@@ -29,6 +30,10 @@ import { TemplateModalComponent } from './product/template-modal/template-modal.
 import { ProductCardComponent } from './product/product-card/product-card.component';
 import { CarouselTemplateCartComponent } from './product/carousel-template-cart/carousel-template-cart.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { CardComponent } from './common/card/card.component';
+import { AdminNavComponent } from './nav/admin-nav/admin-nav.component';
+// import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -45,7 +50,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     AccordionAnanasComponent,
     TemplateModalComponent,
     ProductCardComponent,
-    CarouselTemplateCartComponent
+    CarouselTemplateCartComponent,
+    CardComponent,
+    AdminNavComponent,
   ],
   imports: [
     BrowserModule, 
@@ -60,11 +67,13 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     AccordionModule.forRoot(),
-    SlickCarouselModule
+    SlickCarouselModule,
+    NgApexchartsModule,
+    NgbPaginationModule,
+    NgbAlertModule,
   ],
   providers: [
   ],
-   
   bootstrap: [AppComponent],
 })
 export class AppModule {}

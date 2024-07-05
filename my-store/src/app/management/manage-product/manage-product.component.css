@@ -20,3 +20,32 @@
   border: 2px dashed #f15e2c;
   width: 500px;
 }
+.container-fluid {
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-open .container-fluid {
+  margin-left: 80px; /* Điều chỉnh giá trị này tùy thuộc vào chiều rộng của sidebar */
+}
+
+.row.flex-nowrap {
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-open .row.flex-nowrap {
+  margin-left: 80px; /* Điều chỉnh giá trị này tùy thuộc vào chiều rộng của sidebar */
+}
+.search-form input {
+  border: 0;
+  font-size: 14px;
+  color: #012970;
+  border: 2px solid gray;
+  padding: 12px 38px 12px 8px;
+}
+.search-form button {
+  border: 0;
+  padding: 0;
+  margin-left: -30px;
+  background: none;
+  color: grey;
+}

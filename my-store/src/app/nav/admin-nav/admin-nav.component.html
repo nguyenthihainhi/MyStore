@@ -1,0 +1,75 @@
+<header class="header" id="header" [ngClass]="isSidebarOpen ? '' : 'body-pd'">
+  <div class="header_toggle" (click)="toggleSidebar()">
+    <i
+      class="bx bx-menu text-main"
+      id="header-toggle"
+      [ngClass]="isSidebarOpen ? '' : 'bx-x'"
+    ></i>
+  </div>
+  <div class="d-flex">
+    <a href=""><i class="fa-regular fa-bell m-1 fs-4 me-3 text-warning"></i></a>
+    <a href=""
+      ><i class="fa-regular fa-envelope m-1 fs-4 me-3 text-info"></i
+    ></a>
+    <div class="header_img">
+      <img src="https://i.imgur.com/hczKIze.jpg" alt="" />
+    </div>
+  </div>
+</header>
+<div
+  class="l-navbar bg-light"
+  id="nav-bar"
+  [ngClass]="isSidebarOpen ? '' : 'show-side'"
+>
+  <nav class="nav-admin">
+    <div>
+      <a href="#" class="nav_logo">
+        <img
+          src="https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Logo_Ananas_Header.svg"
+          height="30"
+          width="30"
+          alt="logo"
+        />
+        <span class="nav_logo-name text-secondary">Ananas</span>
+      </a>
+      <div class="nav_list">
+        <a
+          [routerLink]="['/dashboard']"
+          routerLinkActive="active"
+          class="nav_link"
+        >
+          <i class="bx bx-grid-alt nav_icon"></i>
+          <span class="nav_name">Dashboard</span>
+        </a>
+        <a
+          [routerLink]="['../manage/product']"
+          routerLinkActive="active"
+          class="nav_link"
+        >
+          <i class="bx bx-package nav_icon"></i>
+          <span class="nav_name">Products</span>
+        </a>
+        <a href="#" class="nav_link">
+          <i class="bx bx-basket nav_icon"></i>
+          <span class="nav_name">Orders</span>
+        </a>
+        <a href="#" class="nav_link">
+          <i class="bx bx-sitemap nav_icon"></i>
+          <span class="nav_name">Categories</span>
+        </a>
+        <a href="#" class="nav_link">
+          <i class="fa-solid fa-users nav_icon"></i>
+          <span class="nav_name">Customers</span>
+        </a>
+        <a href="#" class="nav_link">
+          <i class="bx bx-bar-chart-alt-2 nav_icon"></i>
+          <span class="nav_name">Stats</span>
+        </a>
+      </div>
+    </div>
+    <a href="#" class="nav_link">
+      <i class="bx bx-log-out nav_icon"></i>
+      <span class="nav_name">SignOut</span>
+    </a>
+  </nav>
+</div>

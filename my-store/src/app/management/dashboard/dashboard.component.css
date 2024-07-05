@@ -1,3 +1,10 @@
+.content {
+  margin-left: 100px;
+  transition: 0.3s;
+}
+.content.sidebarExpanded {
+  margin-left: 160px;
+}
 .avatar {
   width: 40px;
   min-width: 40px;
@@ -12,4 +19,31 @@
 }
 .small {
   font-size: 13px;
+}
+.flex-column-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Đảm bảo chiều cao của card đầy đủ */
+}
+.f-10 {
+  font-size: 12px;
+}
+.text-c-green {
+  color: #46dcbe;
+}
+
+.container-fluid {
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-open .container-fluid {
+  margin-left: 80px; /* Điều chỉnh giá trị này tùy thuộc vào chiều rộng của sidebar */
+}
+
+.row.flex-nowrap {
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-open .row.flex-nowrap {
+  margin-left: 80px; /* Điều chỉnh giá trị này tùy thuộc vào chiều rộng của sidebar */
 }
