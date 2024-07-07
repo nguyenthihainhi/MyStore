@@ -1,21 +1,3 @@
-.color-picker {
-  display: flex;
-  flex-wrap: wrap;
-  width: 220px;
-  margin: 0 20px;
-}
-
-.color-option {
-  width: 30px;
-  height: 30px;
-  margin: 5px;
-  border: 2px solid transparent;
-  cursor: pointer;
-}
-
-.color-option.selected {
-  border: 2px solid black;
-}
 .btn-add {
   border-radius: 50%;
   width: 40px;
@@ -61,6 +43,9 @@
   margin-left: -30px;
   background: none;
   color: grey;
+}
+.table-pink {
+  background-color: rgb(222, 153, 176);
 }
 .name {
   display: -webkit-box;
