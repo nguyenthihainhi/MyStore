@@ -11,7 +11,9 @@
     margin-bottom: 0px;
   }
 }
-
+body {
+  padding: 0 !important;
+}
 /* menu left */
 .menu {
   font-family: Arial;
@@ -20,7 +22,7 @@
 .menu-categories {
   text-align: center;
   margin-bottom: 15px;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
 }
 
 .menu-category:hover {
@@ -54,11 +56,11 @@
   border-bottom: 1px solid black;
 }
 
-.tab-pane{
+.tab-pane {
   display: none;
 }
 
-.tab-pane.active{
+.tab-pane.active {
   display: block !important;
 }
 
@@ -82,7 +84,7 @@
   background-color: #f1f1f1;
 }
 
-.type-list li a.current{
+.type-list li a.current {
   color: #000;
   background-color: #f1f1f1;
   font-weight: bold;
@@ -137,7 +139,7 @@
   /* Align vertically with the checkbox */
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm {
     display: none !important;
   }
@@ -161,12 +163,8 @@
   overflow: hidden;
 }
 
-
-
-
 .banner_img {
   width: 100%;
-
 }
 
 @media only screen and (max-width: 992px) {
@@ -184,7 +182,7 @@
 }
 
 .popular-items .thumbnail .cont-item img.inormal {
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .popular-items .thumbnail .cont-item img.ihover {
@@ -199,26 +197,25 @@
   display: none;
 }
 
-
 .btn-navigate {
   display: block;
   text-align: center;
   top: -39px;
 }
 
-.btn-prd1-buynow{
+.btn-prd1-buynow {
   visibility: hidden;
   opacity: 0;
   background-color: #ff6600;
   color: #fff;
   font-weight: 800;
   padding: 1rem 2rem;
-  transition: all .3s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }
 
-.btn-prd1-heart{
-  background: url('https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg') no-repeat;
+.btn-prd1-heart {
+  background: url("https://ananas.vn/wp-content/themes/ananas/fe-assets/images/svg/Heart_product_1.svg")
+    no-repeat;
   width: 35px;
   height: 30px;
   position: absolute;
@@ -230,13 +227,11 @@
   opacity: 1;
 }
 
-
-
 .card-content {
   margin-top: -30px;
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .card-content {
     margin-top: 0;
   }
@@ -247,7 +242,6 @@
     margin-top: 0;
   }
 }
-
 
 .popular-name:hover {
   color: #ff6600;
