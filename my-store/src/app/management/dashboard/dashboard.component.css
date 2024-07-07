@@ -46,3 +46,6 @@
 .sidebar-open .row.flex-nowrap {
   margin-left: 80px; /* Điều chỉnh giá trị này tùy thuộc vào chiều rộng của sidebar */
 }
+.mt {
+  margin-top: 80px;
+}

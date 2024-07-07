@@ -123,3 +123,9 @@ span {
   font-weight: 400;
   font-size: 14px;
 }
+.mt {
+  margin-top: 80px;
+}
+.table-primary {
+  background-color: #cfe2ff;
+}
