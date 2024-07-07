@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Category } from '../models/category';
-import { UrlApi } from '../url/UrlApi';
+import { CategoryURL } from '../url/UrlApi';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +13,10 @@ export class CategoryService {
     { categoryID: '3', name: 'Top | Nửa trên' },
   ];
 
-  url = UrlApi.ApiCategory;
   constructor(private http: HttpClient) { }
 
   getCategories(){
     return this.categories;
-    // return this.http.get<Category[]>(this.url);
+    // return this.http.get<Category[]>(CategoryURL.CategorysUrl);
   }
 }

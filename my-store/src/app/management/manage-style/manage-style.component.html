@@ -1,0 +1,163 @@
+<app-admin-nav (sidebarToggle)="toggleSidebar()"></app-admin-nav>
+<div class="bg-light container" [ngClass]="{ 'sidebar-open': isSidebarOpen }">
+  <div class="row flex-nowrap" [ngClass]="{ 'sidebar-open': isSidebarOpen }">
+    <div class="col py-3 m-3">
+      <div class="card">
+        <div class="w-100">
+          <div
+            bsModal
+            #lgModal="bs-modal"
+            class="modal fade w-100"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="dialog-sizes-name1"
+          >
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 id="dialog-sizes-name1" class="modal-title pull-left">
+                    Enter Style Information
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close close pull-right"
+                    (click)="lgModal.hide()"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true" class="visually-hidden"
+                      >&times;</span
+                    >
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="mb-3 row">
+                        <label for="name" class="col-sm-3 col-form-label"
+                          >Style Name</label
+                        >
+                        <div class="col-sm-9">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            placeholder="style name"
+                            [(ngModel)]="style.name"
+                          />
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="slug" class="col-sm-3 col-form-label"
+                          >Slug</label
+                        >
+                        <div class="col-sm-9">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="slug"
+                            placeholder="slug"
+                            [(ngModel)]="style.slug"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="mb-3 row">
+                        <div class="col-sm-3 col-form-label"></div>
+                        <div class="col-sm-9">
+                          <button
+                            class="btn btn-outline-primary me-3"
+                            (click)="addStyle()"
+                          >
+                            Add
+                          </button>
+                          <button
+                            class="btn btn-outline-primary me-3"
+                            (click)="updateStyle()"
+                          >
+                            Update
+                          </button>
+                          <button class="btn btn-danger" (click)="clearForm()">
+                            Clear
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-secondary">Style List</h2>
+        <div class="d-flex justify-content-between mt-5">
+          <div class="search-bar w-25 ms-0">
+            <form class="search-form d-flex align-items-center">
+              <input
+                class="form-control"
+                type="text"
+                name="query"
+                placeholder="Search style name..."
+                title="Enter search keyword"
+                [(ngModel)]="searchText"
+                (keyup.enter)="onSearch()"
+              />
+              <button type="submit" title="Search">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+          </div>
+          <button
+            class="btn btn-outline-primary btn-add"
+            (click)="lgModal.show()"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+
+        <table class="table mt-2">
+          <thead class="table-pink">
+            <tr class="th-product">
+              <th class="p-3 m-1 text-light text-uppercase">
+                <span class="name">No.</span>
+              </th>
+              <th class="p-3 m-1 text-light text-uppercase">
+                <span class="name">Style Name</span>
+              </th>
+              <th class="p-3 m-1 text-light text-uppercase">
+                <span class="name">Style Slug</span>
+              </th>
+              <th class="p-3 m-1 text-light text-uppercase">
+                <span class="name">Actions</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="tr-product" *ngFor="let item of styles; let i = index">
+              <td>
+                <span class="name text-secondary p-3">{{
+                  i + 1 | number : "2.0"
+                }}</span>
+              </td>
+              <td>
+                <span class="name text-secondary p-3">{{ item.name }}</span>
+              </td>
+              <td>
+                <span class="name text-secondary p-3">{{ item.slug }}</span>
+              </td>
+              <td>
+                <div class="d-flex flex-sm-wrap p-3">
+                  <a class="me-3" (click)="getStyle(item.styleId, lgModal)"
+                    ><i class="far fa-edit name"></i
+                  ></a>
+                  <a class="text-danger" (click)="deleteStyle(item.styleId)"
+                    ><i class="fas fa-trash-alt name"></i
+                  ></a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -33,6 +33,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { CardComponent } from './common/card/card.component';
 import { AdminNavComponent } from './nav/admin-nav/admin-nav.component';
+import { ManageStyleComponent } from './management/manage-style/manage-style.component';
+import { ManageCollectionComponent } from './management/manage-collection/manage-collection.component';
 // import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { AdminNavComponent } from './nav/admin-nav/admin-nav.component';
     ProductListComponent,
     LoginComponent,
     ManageProductComponent,
+    ManageStyleComponent,
+    ManageCollectionComponent,
     SideBarComponent,
     DashboardComponent,
     ContentTabComponent,

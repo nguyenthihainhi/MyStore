@@ -7,7 +7,7 @@ import { Color } from '../../models/color';
 import { ColorService } from '../../service/color.service';
 import { CategoryService } from '../../service/category.service';
 import { Category } from '../../models/category';
-import { ProductList } from '../../models/productList';
+import { ProductList, Products } from '../../models/productList';
 
 @Component({
   selector: 'app-manage-product',
@@ -22,11 +22,11 @@ export class ManageProductComponent implements OnInit{
   }
   products: ProductList[] = [];
   product: Product = new Product();
-  ProductId: number | null = null; 
   colors: Color[] = [];
   categories: Category[] = [];
   selectedColor: string | null = null;
   selectedCategory: string | null = null;
+  searchText: string = '';
   showDetails: boolean = false; // Flag to show or hide the "Added Details" section
   constructor(
     private route: ActivatedRoute,
@@ -54,9 +54,10 @@ export class ManageProductComponent implements OnInit{
   }
 
   loadProduct(){
-    this.productSevice.getProducts().subscribe((products: ProductList[]) =>{
-      this.products = products;
-    });
+    // this.productSevice.getProducts().subscribe((pro: Products) =>{
+    //   this.products = pro.productList;
+    // });
+    this.products = this.productSevice.getProducts().productList;
   }
   // loadColor(){
   //   this.colorSevice.getColors().subscribe((colors: Color[]) =>{
@@ -71,13 +72,13 @@ export class ManageProductComponent implements OnInit{
   selectColor(color: any, detail: ProductDetail){
     detail.color = color.name;
   }
-  getProduct(id: number){
+  getProduct(id: number, event: any){
     this.productSevice.getProduct(id).subscribe((product: Product) =>{
       this.product = product;
-      this.ProductId = product.productID;
     });
     this.selectedColor = this.product.productDetail.length > 0 ? this.product.productDetail[0].color : null;
     this.showDetails = this.product.productDetail.length > 0; // Show details if any exist
+    event.show()
   }
   addProduct(){
     this.productSevice.addProduct(this.product).subscribe(() => {
@@ -101,13 +102,18 @@ export class ManageProductComponent implements OnInit{
     this.product = new Product();
     this.selectedColor = '';
     this.showDetails = false;
-    this.ProductId = null;
   }
   removeDetail(i: number){
     this.product.productDetail.splice(i, 1);
     if(this.product.productDetail.length === 0){
       this.showDetails = false;
     }
+  }
+  // search product name
+  onSearch() {
+    this.productSevice.searchProduct(this.searchText).subscribe(() => {
+      this.loadProduct();
+    });
   }
 
 

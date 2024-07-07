@@ -42,12 +42,28 @@
           <span class="nav_name">Dashboard</span>
         </a>
         <a
-          [routerLink]="['../manage/product']"
+          [routerLink]="['/productList']"
           routerLinkActive="active"
           class="nav_link"
         >
           <i class="bx bx-package nav_icon"></i>
           <span class="nav_name">Products</span>
+        </a>
+        <a
+          [routerLink]="['/styleList']"
+          routerLinkActive="active"
+          class="nav_link"
+        >
+          <i class="bx bxs-t-shirt nav_icon"></i>
+          <span class="nav_name">Styles</span>
+        </a>
+        <a
+          [routerLink]="['/collectionList']"
+          routerLinkActive="active"
+          class="nav_link"
+        >
+          <i class="bx bx-collection nav_icon"></i>
+          <span class="nav_name">Collections</span>
         </a>
         <a href="#" class="nav_link">
           <i class="bx bx-basket nav_icon"></i>
