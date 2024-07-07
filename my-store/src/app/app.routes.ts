@@ -1,4 +1,3 @@
-import { Routes } from '@angular/router';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { ManageProductComponent } from './management/manage-product/manage-product.component';
@@ -9,6 +8,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { AdminNavComponent } from './nav/admin-nav/admin-nav.component';
 import { ManageStyleComponent } from './management/manage-style/manage-style.component';
 import { ManageCollectionComponent } from './management/manage-collection/manage-collection.component';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {path: 'product', component: ProductListComponent},

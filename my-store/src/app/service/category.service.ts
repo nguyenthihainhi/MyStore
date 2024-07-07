@@ -8,9 +8,9 @@ import { CategoryURL } from '../url/UrlApi';
 })
 export class CategoryService {
   categories: Category[] = [
-    { categoryID: '1', name: 'Accessories' },
-    { categoryID: '2', name: 'Footwear' },
-    { categoryID: '3', name: 'Top' },
+    { categoryID: '1', name: 'Accessories | Phụ kiên' },
+    { categoryID: '2', name: 'Footwear | Lên chân' },
+    { categoryID: '3', name: 'Top | Nửa trên' },
   ];
 
   constructor(private http: HttpClient) { }
