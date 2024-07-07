@@ -129,3 +129,6 @@ span {
 .table-primary {
   background-color: #cfe2ff;
 }
+a {
+  text-decoration: none;
+}
